@@ -1,0 +1,92 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Pagina Inicio{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+<div class="row">
+  <div class="col-md-4" id="card-container">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.MSrZNMlIeTUSITIB2f7QLQHaEK?rs=1&pid=ImgDetMain" class="card-img-top" alt="Imagen 1">
+      <div class="card-body">
+        <p class="card-text">Peliculas</p>
+        <button class="btn btn-primary" onclick="verImagen(0)">Ver</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <img src="https://images5.alphacoders.com/571/thumb-1920-571559.jpg" class="card-img-top" alt="Imagen 2">
+      <div class="card-body">
+        <p class="card-text">Equipos de futbol</p>
+        <button class="btn btn-primary" onclick="verImagen(1)">Ver</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.95ddaceb0ec2bb22a3da181b9a6e8ad9?rik=TTXFQZoDgqDqDQ&pid=ImgRaw&r=0" class="card-img-top" alt="Imagen 3">
+      <div class="card-body">
+        <p class="card-text">Comida</p>
+        <button class="btn btn-primary" onclick="verImagen(2)">Ver</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-md-4">
+    <div class="card">
+      <img src="https://static.tildacdn.com/tild6163-3133-4536-b762-356265613232/Optimized-Copy_of_IM.jpg" class="card-img-top" alt="Imagen 4">
+      <div class="card-body">
+        <p class="card-text">Juegos</p>
+        <button class="btn btn-primary" onclick="verImagen(3)">Ver</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/R.a9f5181a0c216785c9be4f68e31ee8fc?rik=0i6eo9lb6bGGGQ&pid=ImgRaw&r=0" class="card-img-top" alt="Imagen 5">
+      <div class="card-body">
+        <p class="card-text">Autos</p>
+        <button class="btn btn-primary" onclick="verImagen(4)">Ver</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.32fQYDT9PKxqYUeNKXaxxwHaEK?rs=1&pid=ImgDetMain" class="card-img-top" alt="Imagen 6">
+      <div class="card-body">
+        <p class="card-text">Paises</p>
+        <button class="btn btn-primary" onclick="verImagen(5)">Ver</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div id="carouselModal" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carouselImages">
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselModal" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselModal" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
