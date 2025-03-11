@@ -1,0 +1,71 @@
+ /* Estilo de las cartas */
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 1rem;
+  }
+  
+  .btn-primary {
+    background-color: #bdbdbd;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .btn-primary:hover {
+    background-color: #357ABD;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Estilo del modal */
+  .modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    border-radius: 10px;
+  }
+  
+  .carousel-item img {
+    border-radius: 10px;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #bdbdbd;
+    border-radius: 50%;
+  }
+  
+  .carousel-control-prev-icon:hover,
+  .carousel-control-next-icon:hover {
+    background-color: #357ABD;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .col-md-4 {
+      margin-bottom: 20px;
+    }
+  }

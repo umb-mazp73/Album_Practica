@@ -1,0 +1,30 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}
+    {% if anime %}
+        {{ anime.title }}
+    {% else %}
+        Anime no encontrado
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/anime_detalle.css' %}">
+
+<div class="anime-detail-container">
+    {% if anime %}
+        <div class="anime-header">
+            <img src="{{ anime.images.jpg.image_url }}" alt="{{ anime.title }}" class="anime-detail-image">
+            <div class="anime-info">
+                <h1 class="anime-detail-title">{{ anime.title }}</h1>
+                <p class="anime-detail-summary">{{ anime.synopsis|default:"Sin resumen disponible." }}</p>
+                <a href="{% url 'anime_list' %}" class="back-button">⬅ Volver</a>
+            </div>
+        </div>
+    {% else %}
+        <p>Anime no encontrado.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

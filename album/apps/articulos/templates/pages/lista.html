@@ -1,0 +1,31 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Lista de Artículos{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/lista.css' %}">
+
+<div class="container">
+    <h1>Lista de Artículos</h1>
+
+    {% if articulos %}
+        <ul class="article-list">
+            {% for articulo in articulos %}
+                <li class="article-item">
+                    <h2 class="article-title">{{ articulo.titulo }}</h2>
+                    <p class="article-date">Publicado el: {{ articulo.fecha_publicacion|date:"d M Y H:i" }}</p>
+                    <p class="article-summary">{{ articulo.resumen }}</p>
+                    {% if articulo.imageurl %}
+                        <img src="{{ articulo.imageurl }}" alt="Imagen de {{ articulo.titulo }}" class="article-image">
+                    {% endif %}
+                    <a href="{% url 'detalle_articulo' articulo.id %}" class="article-link">Ver más</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay artículos disponibles.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

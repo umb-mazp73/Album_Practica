@@ -1,0 +1,30 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Lista de Animes{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/anime.css' %}">
+
+<div class="container">
+    <h1>Lista de Animes</h1>
+
+    {% if animes %}
+        <div class="anime-grid">
+            {% for anime in animes %}
+            <div class="anime-card">
+                <a href="{% url 'anime_detalle' anime.mal_id %}">
+                    <img src="{{ anime.images.jpg.image_url }}" alt="{{ anime.title }}" class="anime-image">
+                </a>
+                <a href="{% url 'anime_detalle' anime.mal_id %}" class="anime-title-link">
+                    <h3 class="anime-title">{{ anime.title }}</h3>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No hay animes disponibles.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

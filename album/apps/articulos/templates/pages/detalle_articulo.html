@@ -1,0 +1,22 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}{{ articulo.titulo }}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/detalle.css' %}">
+
+<div class="container">
+    <h1 class="article-title">{{ articulo.titulo }}</h1>
+    <p class="article-date">Publicado el: {{ articulo.fecha_publicacion|date:"d M Y H:i" }}</p>
+    {% if articulo.imageurl %}
+        <img src="{{ articulo.imageurl }}" alt="Imagen de {{ articulo.titulo }}" class="article-image">
+    {% endif %}
+
+    <p class="article-summary"><strong>Resumen:</strong> {{ articulo.resumen }}</p>
+    <p class="article-content"><strong>Detalle:</strong> {{ articulo.detalle }}</p>
+
+    <a href="{% url 'lista_articulos' %}" class="back-link">⬅ Volver a la lista</a>
+</div>
+
+{% endblock %}
